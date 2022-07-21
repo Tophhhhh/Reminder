@@ -1,4 +1,4 @@
-package ui;
+package reminder.ui;
 
 public interface Ui {
 	

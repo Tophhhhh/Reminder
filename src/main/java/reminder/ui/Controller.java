@@ -1,13 +1,13 @@
-package ui;
+package reminder.ui;
 
 import java.util.List;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 
-import app.Reminder;
-import service.IDataService;
-import service.ServiceImpl;
+import reminder.model.Reminder;
+import reminder.service.IDataService;
+import reminder.service.ServiceImpl;
 
 public class Controller {
 
@@ -32,7 +32,6 @@ public class Controller {
 	public void create() {
 		form.setEnabled(true);
 		form.create();
-//		service.create(null);
 	}
 
 	public void update() {

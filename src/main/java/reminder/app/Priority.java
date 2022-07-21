@@ -1,4 +1,4 @@
-package app;
+package reminder.app;
 
 public enum Priority {
 	LOW, MEDIUM, HIGH

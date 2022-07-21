@@ -1,9 +1,10 @@
-package database;
+package reminder.database;
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -22,6 +23,14 @@ public class Database {
 			con = DriverManager.getConnection(sql);
 			stmnt = con.createStatement();
 		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void executeStatement(String sql) {
+		try {
+			ResultSet rs = stmnt.executeQuery(sql);
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}

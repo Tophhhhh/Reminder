@@ -1,4 +1,4 @@
-package ui;
+package reminder.ui;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,8 +18,8 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
-import app.Priority;
-import app.Reminder;
+import reminder.app.Priority;
+import reminder.model.Reminder;
 
 public class FormView {
 

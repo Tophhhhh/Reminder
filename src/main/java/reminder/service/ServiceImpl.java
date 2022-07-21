@@ -1,15 +1,14 @@
-package service;
+package reminder.service;
 
 import java.util.List;
 
-import app.Reminder;
-import dao.IServiceDao;
-import dao.ServiceDaoImpl;
+import reminder.dao.IServiceDao;
+import reminder.dao.ServiceDaoImpl;
+import reminder.model.Reminder;
 
 public class ServiceImpl implements IDataService {
 
 	private IServiceDao dao = new ServiceDaoImpl();
-//	private IServiceDao dao = new ServiceMockupDao();
 
 	@Override
 	public List<Reminder> loadAll() {

@@ -1,8 +1,8 @@
-package service;
+package reminder.service;
 
 import java.util.List;
 
-import app.Reminder;
+import reminder.model.Reminder;
 
 public interface IDataService {
 

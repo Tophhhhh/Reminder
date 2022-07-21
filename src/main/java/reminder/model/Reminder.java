@@ -1,6 +1,9 @@
-package app;
+package reminder.model;
 
 import java.util.Date;
+
+import reminder.annotation.Mandatory;
+import reminder.app.Priority;
 
 public class Reminder {
 

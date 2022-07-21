@@ -1,8 +1,8 @@
-package dao;
+package reminder.dao;
 
 import java.util.List;
 
-import app.Reminder;
+import reminder.model.Reminder;
 
 public interface IServiceDao {
 	

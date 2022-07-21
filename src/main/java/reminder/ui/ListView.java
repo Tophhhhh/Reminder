@@ -1,4 +1,4 @@
-package ui;
+package reminder.ui;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,8 +29,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 
-import app.Priority;
-import app.Reminder;
+import reminder.app.Priority;
+import reminder.model.Reminder;
 
 public class ListView implements Ui {
 
@@ -265,7 +265,6 @@ public class ListView implements Ui {
 				mb.setMessage("Klick auf ein Eintrag!");
 				mb.open();
 			}
-
 		});
 	}
 

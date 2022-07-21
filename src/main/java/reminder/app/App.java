@@ -1,9 +1,9 @@
-package app;
+package reminder.app;
 
-import service.IDataService;
-import service.ServiceImpl;
-import ui.ListView;
-import ui.Ui;
+import reminder.service.IDataService;
+import reminder.service.ServiceImpl;
+import reminder.ui.ListView;
+import reminder.ui.Ui;
 
 public class App {
 	

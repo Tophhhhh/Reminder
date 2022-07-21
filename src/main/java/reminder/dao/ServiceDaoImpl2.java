@@ -1,4 +1,4 @@
-package dao;
+package reminder.dao;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -6,9 +6,9 @@ import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.List;
 
-import app.Mandatory;
-import app.Reminder;
-import database.Database;
+import reminder.annotation.Mandatory;
+import reminder.database.Database;
+import reminder.model.Reminder;
 
 public class ServiceDaoImpl2 implements IServiceDao {
 
