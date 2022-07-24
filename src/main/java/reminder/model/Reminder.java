@@ -7,6 +7,7 @@ import reminder.app.Priority;
 
 public class Reminder {
 
+	// TODO: change id to LONG
 	public String id;
 	@Mandatory(isMandatory = true)
 	public String topic;

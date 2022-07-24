@@ -31,6 +31,7 @@ import org.eclipse.swt.widgets.ToolItem;
 
 import reminder.app.Priority;
 import reminder.model.Reminder;
+import reminder.util.MusicLoader;
 
 public class ListView implements Ui {
 

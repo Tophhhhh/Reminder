@@ -1,6 +1,5 @@
 package reminder.app;
 
-import reminder.service.IDataService;
 import reminder.service.ServiceImpl;
 import reminder.ui.ListView;
 import reminder.ui.Ui;
@@ -8,7 +7,6 @@ import reminder.ui.Ui;
 public class App {
 	
 	private static App INSTANCE;
-	private IDataService service;
 	private Ui ui;
 	
 	public static App getInstance() {
@@ -19,7 +17,7 @@ public class App {
 	}
 	
 	public void init(String[] args) {
-		service = new ServiceImpl();
+		new ServiceImpl();
 		ui = new ListView();
 		ui.show();
 	}

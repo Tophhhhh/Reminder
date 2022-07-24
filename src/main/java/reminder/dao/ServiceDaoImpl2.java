@@ -19,21 +19,21 @@ public class ServiceDaoImpl2 implements IServiceDao {
 	@Override
 	public List<Reminder> loadAll() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT * FROM ");
-		sb.append("reminder");
+		sb.append("SELECT * FROM reminder");
 		return null;
 	}
 
 	@Override
 	public List<Reminder> loadFiltered(String index) {
-		// TODO Auto-generated method stub
+		StringBuilder sb = new StringBuilder();
+		sb.append("SELECT * FROM reminder where like = '%" + index + "%'");
 		return null;
 	}
 
 	@Override
 	public void createReminder(Reminder newReminder) {
-		// TODO Auto-generated method stub
-		
+		StringBuilder sb = new StringBuilder();
+		sb.append("Insert into reminder values(");
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class ServiceDaoImpl2 implements IServiceDao {
 
 	@Override
 	public List<Reminder> sortReminder(String sort, boolean isFiltered, String search) {
-		// TODO Auto-generated method stub
+		// sort
 		return null;
 	}
 
@@ -68,8 +68,7 @@ public class ServiceDaoImpl2 implements IServiceDao {
 
 	@Override
 	public void createXml(List<Reminder> xml) {
-		// TODO Auto-generated method stub
-		
+		// Empty 
 	}
 	
 	public boolean checkMandatory(Reminder reminder) {

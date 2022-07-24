@@ -9,6 +9,7 @@ import reminder.model.Reminder;
 public class ServiceImpl implements IDataService {
 
 	private IServiceDao dao = new ServiceDaoImpl();
+//	private IServiceDao dao = new ServiceDaoImpl2();
 
 	@Override
 	public List<Reminder> loadAll() {

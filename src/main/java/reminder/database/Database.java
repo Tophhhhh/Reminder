@@ -27,6 +27,11 @@ public class Database {
 		}
 	}
 	
+	/**
+	 * Needed a solution to convert data to a Pojo without hardcode
+	 * 
+	 * @param sql
+	 */
 	public static void executeStatement(String sql) {
 		try {
 			ResultSet rs = stmnt.executeQuery(sql);
