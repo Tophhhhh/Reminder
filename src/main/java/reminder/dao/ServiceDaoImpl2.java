@@ -7,26 +7,34 @@ import java.util.Date;
 import java.util.List;
 
 import reminder.annotation.Mandatory;
-import reminder.database.Database;
 import reminder.model.Reminder;
+import reminder.util.DatabaseUtil;
 
 public class ServiceDaoImpl2 implements IServiceDao {
 
 	public ServiceDaoImpl2() {
-		Database.connection();
+		DatabaseUtil.connection();
+	}
+	
+	@Override
+	public void onClose() {
+		DatabaseUtil.closeConnection();
+		System.out.println("Connection wurde geschlossen!");
 	}
 
 	@Override
 	public List<Reminder> loadAll() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("SELECT * FROM reminder");
+		DatabaseUtil.executeStatement(sb.toString(), Reminder.class);
 		return null;
 	}
 
 	@Override
 	public List<Reminder> loadFiltered(String index) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT * FROM reminder where like = '%" + index + "%'");
+		sb.append("SELECT * FROM reminder where name like = '" + index + "'");
+		DatabaseUtil.executeStatement(sb.toString(), Reminder.class);
 		return null;
 	}
 
