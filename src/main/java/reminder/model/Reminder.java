@@ -7,7 +7,7 @@ import reminder.app.Priority;
 
 public class Reminder {
 
-	// TODO: change id to LONG
+	// TODO: change id to LONG AND ADD HASH CODE
 	public String id;
 	@Mandatory(isMandatory = true)
 	public String topic;

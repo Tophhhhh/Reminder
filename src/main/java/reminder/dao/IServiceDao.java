@@ -25,4 +25,6 @@ public interface IServiceDao {
 	public void createXml(List<Reminder> xml);
 	
 	public boolean checkMandatory(Reminder reminder);
+	
+	public void onClose();
 }

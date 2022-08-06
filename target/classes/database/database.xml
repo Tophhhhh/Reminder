@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entries>
-                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                    
   
   
   
@@ -808,8 +808,20 @@
   
   
   
+  
+  
+  
+  
+  
+  
   <reminder>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -829,7 +841,13 @@
     
     
     <id>eb745ea6-e51e-4bad-a88a-af9628ed4e03</id>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -849,7 +867,13 @@
     
     
     <topic>Arzt</topic>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -869,7 +893,13 @@
     
     
     <comment>Hals-Nasen-Ohren Arzt</comment>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -889,7 +919,13 @@
     
     
     <sound>true</sound>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -909,7 +945,13 @@
     
     
     <place>Paderborn</place>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -929,7 +971,13 @@
     
     
     <priority>HIGH</priority>
-                                                                                
+                                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -949,7 +997,13 @@
     
     
     <datetime>2022-07-07 17:30:02</datetime>
-                                                                              
+                                                                                                      
+  
+  
+  
+  
+  
+  
   
   
   
@@ -969,7 +1023,13 @@
   
   
   </reminder>
-                                      
+                                                  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -989,7 +1049,13 @@
   
   
   <reminder>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1008,7 +1074,13 @@
     
     
     <id>54f04579-cab6-4906-8446-14a36914d96d</id>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1027,7 +1099,13 @@
     
     
     <topic>Einkaufen</topic>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1046,7 +1124,13 @@
     
     
     <comment>Obst, Gemüse, Süßigkeiten, Kornflakes, Brötchen, Wurst</comment>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1065,7 +1149,13 @@
     
     
     <sound>false</sound>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1084,7 +1174,13 @@
     
     
     <place/>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1103,7 +1199,13 @@
     
     
     <priority>MEDIUM</priority>
-                                                                            
+                                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1122,7 +1224,13 @@
     
     
     <datetime>2022-06-07 15:00:30</datetime>
-                                                                          
+                                                                                                  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1141,7 +1249,7 @@
   
   
   </reminder>
-                                    
+                                                
   
   
   
@@ -1175,8 +1283,20 @@
   
   
   
+  
+  
+  
+  
+  
+  
   <reminder>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1192,7 +1312,13 @@
     
     
     <id>015205b5-0a6b-4315-b420-eb3900ad57ef</id>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1208,7 +1334,13 @@
     
     
     <topic>Workshop 123</topic>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1224,7 +1356,13 @@
     
     
     <comment>Java - JavaFX Workshop</comment>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1240,7 +1378,13 @@
     
     
     <sound>true</sound>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1256,7 +1400,13 @@
     
     
     <place>Online</place>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1272,7 +1422,13 @@
     
     
     <priority>HIGH</priority>
-                                                                
+                                                                                        
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1288,7 +1444,13 @@
     
     
     <datetime>2022-09-22 09:30:03</datetime>
-                                                              
+                                                                                      
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1304,7 +1466,13 @@
   
   
   </reminder>
-                              
+                                          
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1320,7 +1488,13 @@
   
   
   <reminder>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1335,7 +1509,13 @@
     
     
     <id>dffdab73-10a0-4fe5-9aba-5f82abedbde6</id>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1350,7 +1530,13 @@
     
     
     <topic>Workshop</topic>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1365,7 +1551,13 @@
     
     
     <comment>Java Spring Workshop</comment>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1380,7 +1572,13 @@
     
     
     <sound>true</sound>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1395,7 +1593,13 @@
     
     
     <place>Online</place>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1410,7 +1614,13 @@
     
     
     <priority>LOW</priority>
-                                                            
+                                                                                    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1425,7 +1635,13 @@
     
     
     <datetime>2022-06-09 06:30:20</datetime>
-                                                          
+                                                                                  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1440,7 +1656,7 @@
   
   
   </reminder>
-                            
+                                        
   
 
 
@@ -1460,94 +1676,35 @@
   
   
   
-  <reminder>
-                
-    
-    
-    <id>97b05663-6c44-4baa-8ed2-c7255a9f0a1a</id>
-                
-    
-    
-    <topic>tt</topic>
-                
-    
-    
-    <comment>t</comment>
-                
-    
-    
-    <sound>false</sound>
-                
-    
-    
-    <place/>
-                
-    
-    
-    <priority>LOW</priority>
-                
-    
-    
-    <datetime>2022-06-18 16:07:49</datetime>
+  
+  
+  
+  
+  
               
   
   
-  </reminder>
-      
   
   
-  <reminder>
-            
-    
-    <id>6b4c77cf-9224-48b0-8168-4a48536e59aa</id>
-            
-    
-    <topic>t</topic>
-            
-    
-    <comment>tt</comment>
-            
-    
-    <sound>false</sound>
-            
-    
-    <place/>
-            
-    
-    <priority>LOW</priority>
-            
-    
-    <datetime>2022-06-18 16:09:35</datetime>
-          
   
-  </reminder>
+  
+  
+  
+              
+  
+  
+  
     
   
-  <reminder>
-        
-    <id>e7bd476e-8570-48d2-b840-ccb495986b81</id>
-        
-    <topic>Test</topic>
-        
-    <comment>test</comment>
-        
-    <sound>false</sound>
-        
-    <place/>
-        
-    <priority>LOW</priority>
-        
-    <datetime>2022-06-18 16:13:15</datetime>
-      
-  </reminder>
   
-  <reminder>
-    <id>468a9c67-2036-4995-9b68-c291296bab66</id>
-    <topic>test</topic>
-    <comment>t</comment>
-    <sound>false</sound>
-    <place/>
-    <priority>LOW</priority>
-    <datetime>2022-06-18 16:17:30</datetime>
-  </reminder>
+  
+    
+  
+  
+  
+    
+
+
+
+
 </Entries>

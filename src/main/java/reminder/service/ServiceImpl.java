@@ -62,6 +62,11 @@ public class ServiceImpl implements IDataService {
 		return dao.checkMandatory(reminder);
 	}
 
+	@Override
+	public void onClose() {
+		dao.onClose();
+	}
+
 
 
 }

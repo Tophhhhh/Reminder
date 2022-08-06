@@ -522,4 +522,10 @@ public class ServiceDaoImpl implements IServiceDao {
 		}
 		return isMandatory;
 	}
+
+	@Override
+	public void onClose() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -23,4 +23,6 @@ public interface IDataService {
 	public void createCSV(List<Reminder> reminder);
 	
 	public boolean checkMandatory(Reminder reminder);
+	
+	public void onClose();
 }
