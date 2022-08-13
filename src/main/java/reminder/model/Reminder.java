@@ -1,14 +1,14 @@
 package reminder.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 import reminder.annotation.Mandatory;
 import reminder.app.Priority;
 
 public class Reminder {
 
-	// TODO: change id to LONG AND ADD HASH CODE
-	public String id;
+	public Long id;
 	@Mandatory(isMandatory = true)
 	public String topic;
 	@Mandatory(isMandatory = true)
@@ -23,7 +23,7 @@ public class Reminder {
 		// Empty Constructor
 	}
 
-	public Reminder(String id, String topic, String comment, boolean sound, String place, Priority prio, Date datetime) {
+	public Reminder(Long id, String topic, String comment, boolean sound, String place, Priority prio, Date datetime) {
 		this.id = id;
 		this.topic = topic;
 		this.comment = comment;
@@ -35,11 +35,11 @@ public class Reminder {
 
 	// -- I D
 
-	public String getID() {
+	public Long getID() {
 		return id;
 	}
 
-	public void setUid(String uid) {
+	public void setUid(Long uid) {
 		this.id = uid;
 	}
 
@@ -100,5 +100,22 @@ public class Reminder {
 
 	public void setDatetime(Date date) {
 		this.datetime = date;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Reminder other = (Reminder) obj;
+		return Objects.equals(id, other.id);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 }

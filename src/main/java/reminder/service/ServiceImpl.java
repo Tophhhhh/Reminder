@@ -14,13 +14,11 @@ public class ServiceImpl implements IDataService {
 	@Override
 	public List<Reminder> loadAll() {
 		return dao.loadAll();
-		
 	}
 
 	@Override
 	public void create(Reminder reminder) {
 		dao.createReminder(reminder);
-		
 	}
 
 	@Override
@@ -31,13 +29,11 @@ public class ServiceImpl implements IDataService {
 	@Override
 	public void delete(List<String> id) {
 		dao.delete(id);
-		
 	}
 
 	@Override
 	public List<Reminder> sort(String sort, boolean isFiltered, String search) {
 		return dao.sortReminder(sort, isFiltered, search);
-		
 	}
 
 	@Override
@@ -48,13 +44,11 @@ public class ServiceImpl implements IDataService {
 	@Override
 	public void createXML(List<Reminder> reminder) {
 		dao.createXml(reminder);
-		
 	}
 
 	@Override
 	public void createCSV(List<Reminder> reminder) {
 		dao.createCsv(reminder);
-		
 	}
 
 	@Override
@@ -66,7 +60,4 @@ public class ServiceImpl implements IDataService {
 	public void onClose() {
 		dao.onClose();
 	}
-
-
-
 }

@@ -3,6 +3,7 @@ package reminder.ui;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -178,6 +179,7 @@ public class ListView implements Ui {
 	private void fillTable(List<Reminder> temp) {
 		table.removeAll();
 		List<Reminder> remind = temp;
+//		List<Reminder> remind = Collections.emptyList();
 
 		Color red = new Color(null, 255, 0, 0);
 		Color yellow = new Color(null, 255, 255, 0);
@@ -185,7 +187,7 @@ public class ListView implements Ui {
 
 		for (Reminder r : remind) {
 			TableItem tableItem = new TableItem(table, SWT.NONE);
-			tableItem.setText(0, r.getID());
+			tableItem.setText(0, r.getID().toString());
 			tableItem.setText(1, r.getTopic());
 			tableItem.setText(2, r.prio.toString());
 			tableItem.setBackground(2,
@@ -273,7 +275,7 @@ public class ListView implements Ui {
 		Reminder dummy = new Reminder();
 		String datetime = ti.getText(5) + " " + ti.getText(6);
 		try {
-			dummy.setUid(ti.getText(0));
+			dummy.setUid(Long.parseLong(ti.getText(0)));
 			dummy.setTopic(ti.getText(1));
 			dummy.setPrio(Priority.valueOf(ti.getText(2)));
 			dummy.setComment(ti.getText(3));

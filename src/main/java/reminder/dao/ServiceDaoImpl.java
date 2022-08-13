@@ -86,7 +86,7 @@ public class ServiceDaoImpl implements IServiceDao {
 			String datetime = document.getElementsByTagName(DATETIME).item(i).getTextContent();
 
 			try {
-				reminderslist.add(new Reminder(id, topic, comment, Boolean.valueOf(sound), place,
+				reminderslist.add(new Reminder(Long.parseLong(id), topic, comment, Boolean.valueOf(sound), place,
 						Priority.valueOf(prio), sdf.parse(datetime)));
 			} catch (ParseException e) {
 				e.printStackTrace();
@@ -389,7 +389,7 @@ public class ServiceDaoImpl implements IServiceDao {
 				writer.writeCharacters("\n");
 
 				writer.writeStartElement(ID);
-				writer.writeCharacters(i.getID());
+				writer.writeCharacters(i.getID().toString());
 				writer.writeEndElement();
 				writer.writeCharacters("\n");
 
