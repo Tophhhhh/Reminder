@@ -112,7 +112,7 @@ public class FormView {
 	public void selectedItem(Reminder reminder) {
 		int[] date = setDateCal(reminder.getDatetime());
 
-		uid.setText(reminder.getID());
+		uid.setText(String.valueOf(reminder.getID()));
 		topic.setText(reminder.getTopic());
 		comment.setText(reminder.getComment());
 		place.setText(reminder.getPlace());
@@ -126,7 +126,7 @@ public class FormView {
 
 	public Reminder save() {
 		Reminder pojo = new Reminder();
-		pojo.setUid(uid.getText());
+		pojo.setUid(Long.parseLong(uid.getText()));
 		pojo.setTopic(topic.getText());
 		pojo.setComment(comment.getText());
 		pojo.setSound(sound.getSelection());

@@ -8,6 +8,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import reminder.app.Priority;
+import reminder.model.Reminder;
 
 public class DatabaseUtil {
 	
@@ -16,7 +21,7 @@ public class DatabaseUtil {
 
 	public static void connection() {
 		try {
-			File file = new File("src/database/database.db");
+			File file = new File("src/main/resources/database/Database.db");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -52,11 +57,26 @@ public class DatabaseUtil {
 		try {
 			ResultSet rs = stmnt.executeQuery(sql);
 			for(Field f : clazz.getDeclaredFields()) {
-				
+				f.getType(); // return type
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void executeStatementReminder(String sql) {
+		try {
+			List<Reminder> result = new ArrayList<>();
+			ResultSet rs = stmnt.executeQuery(sql);
+			while (rs.next()) {
+				result.add(new Reminder(rs.getLong("id"), rs.getString("topic"), rs.getString("comment"),
+						rs.getBoolean("sound"), rs.getString("place"), Priority.valueOf(rs.getString("Priority")),
+						rs.getDate("date")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	public static void updateStatement(String sql) {
