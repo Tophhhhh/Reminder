@@ -8,14 +8,18 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import reminder.app.Priority;
 import reminder.model.Reminder;
 
 public class DatabaseUtil {
-	
+
 	private static Connection con;
 	private static Statement stmnt;
 
@@ -33,7 +37,7 @@ public class DatabaseUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void closeConnection() {
 		try {
 			if (stmnt != null) {
@@ -46,9 +50,10 @@ public class DatabaseUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Needed a solution to convert data to a Pojo without hardcode
+	 * 
 	 * @param <T>
 	 * 
 	 * @param sql
@@ -56,29 +61,37 @@ public class DatabaseUtil {
 	public static <T> void executeStatement(String sql, Class<T> clazz) {
 		try {
 			ResultSet rs = stmnt.executeQuery(sql);
-			for(Field f : clazz.getDeclaredFields()) {
+			for (Field f : clazz.getDeclaredFields()) {
 				f.getType(); // return type
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void executeStatementReminder(String sql) {
+
+	public static List<Reminder> executeStatementReminder(String sql) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		try {
 			List<Reminder> result = new ArrayList<>();
 			ResultSet rs = stmnt.executeQuery(sql);
 			while (rs.next()) {
-				result.add(new Reminder(rs.getLong("id"), rs.getString("topic"), rs.getString("comment"),
-						rs.getBoolean("sound"), rs.getString("place"), Priority.valueOf(rs.getString("Priority")),
-						rs.getDate("date")));
+				result.add(
+						new Reminder(
+								rs.getLong("id"), 
+								rs.getString("topic"), 
+								rs.getString("comment"),
+								rs.getBoolean("sound"), 
+								rs.getString("place"), 
+								Priority.valueOf(rs.getString("Priority")),
+								sdf.parse(rs.getString("date"))));
 			}
-		} catch (SQLException e) {
+			return result;
+		} catch (SQLException | ParseException e) {
 			e.printStackTrace();
 		}
-
+		return Collections.emptyList();
 	}
-	
+
 	public static void updateStatement(String sql) {
 		try {
 			stmnt.executeUpdate(sql);

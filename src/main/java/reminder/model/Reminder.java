@@ -32,6 +32,15 @@ public class Reminder {
 		this.prio = prio;
 		this.datetime = datetime;
 	}
+	
+	public Reminder(String topic, String comment, boolean sound, String place, Priority prio, Date datetime) {
+		this.topic = topic;
+		this.comment = comment;
+		this.sound = sound;
+		this.place = place;
+		this.prio = prio;
+		this.datetime = datetime;
+	}
 
 	// -- I D
 

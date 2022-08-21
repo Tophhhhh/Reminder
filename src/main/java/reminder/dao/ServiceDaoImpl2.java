@@ -3,6 +3,7 @@ package reminder.dao;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.StringJoiner;
@@ -28,46 +29,45 @@ public class ServiceDaoImpl2 implements IServiceDao {
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT * FROM reminder");
 //		DatabaseUtil.executeStatement(sb.toString(), Reminder.class);
-//		DatabaseUtil.executeStatementReminder(sql.toString());
-		return null;
+		return DatabaseUtil.executeStatementReminder(sql.toString());
 	}
 
 	@Override
 	public List<Reminder> loadFiltered(String key) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT * FROM reminder WHERE name LIKE = '" + key + "'");
+		sql.append("SELECT * FROM reminder WHERE topic LIKE '" + key + "'");
 //		DatabaseUtil.executeStatement(sb.toString(), Reminder.class);
-//		DatabaseUtil.executeStatementReminder(sql.toString());
-		return null;
+		return DatabaseUtil.executeStatementReminder(sql.toString());
 	}
 
 	@Override
 	public void createReminder(Reminder r) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		StringBuilder sql = new StringBuilder();
-		sql.append("INSERT INTO reminder(topic,comment,sound,place,date) VALUES(");
-		sql.append(r.getTopic() + ",");
-		sql.append(r.getComment() + ",");
+		sql.append("INSERT INTO reminder(topic,comment,sound,place,date,priority) VALUES(");
+		sql.append("'" + r.getTopic() + "',");
+		sql.append("'" + r.getComment() + "',");
 		sql.append((r.isSound() ? 1 : 0)  + ",");
-		sql.append(r.getPlace() + ",");
-		sql.append(r.getDatetime() + ");");
-//		DatabaseUtil.executeStatementReminder(sql.toString());
+		sql.append("'" + r.getPlace() + "',");
+		sql.append("'" + sdf.format(r.getDatetime()) + "',");
+		sql.append("'" + r.getPrio().name() + "');");
+		DatabaseUtil.updateStatement(sql.toString());
 	}
 
 	@Override
 	public void copy(List<Reminder> reminder) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void delete(List<String> id) {
-		StringJoiner sj = new StringJoiner("','");
+		StringJoiner sj = new StringJoiner(",");
 		for(String s : id) {
 			sj.add(s);
 		}
 		StringBuilder sql = new StringBuilder();
-		sql.append("DELETE FROM reminder WHERE id IN ('" + sj.toString() + "');");
-		
+		sql.append("DELETE FROM reminder WHERE id IN (" + sj.toString() + ");");
+		DatabaseUtil.updateStatement(sql.toString());
 	}
 
 	@Override

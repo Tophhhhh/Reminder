@@ -126,7 +126,7 @@ public class FormView {
 
 	public Reminder save() {
 		Reminder pojo = new Reminder();
-		pojo.setUid(Long.parseLong(uid.getText()));
+//		pojo.setUid(Long.parseLong(uid.getText()));
 		pojo.setTopic(topic.getText());
 		pojo.setComment(comment.getText());
 		pojo.setSound(sound.getSelection());
