@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.StringJoiner;
+import java.util.logging.Logger;
 
 import reminder.annotation.Mandatory;
 import reminder.model.Reminder;
@@ -14,14 +15,17 @@ import reminder.util.DatabaseUtil;
 
 public class ServiceDaoImpl2 implements IServiceDao {
 
+	private static Logger LOGGER = Logger.getGlobal();
+	
 	public ServiceDaoImpl2() {
 		DatabaseUtil.connection();
+		LOGGER.info("Connected to database");
 	}
 	
 	@Override
 	public void onClose() {
 		DatabaseUtil.closeConnection();
-		System.out.println("Connection wurde geschlossen!");
+		LOGGER.info("Disconnected from database");
 	}
 
 	@Override
@@ -52,11 +56,25 @@ public class ServiceDaoImpl2 implements IServiceDao {
 		sql.append("'" + sdf.format(r.getDatetime()) + "',");
 		sql.append("'" + r.getPrio().name() + "');");
 		DatabaseUtil.updateStatement(sql.toString());
+		LOGGER.info("Reminder created!");
 	}
 
 	@Override
 	public void copy(List<Reminder> reminder) {
-		// TODO Auto-generated method stub
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		StringBuilder sql;
+		for (Reminder r : reminder) {
+			sql = new StringBuilder();
+			sql.append("INSERT INTO reminder(topic,comment,sound,place,date,priority) VALUES(");
+			sql.append("'" + r.getTopic() + "',");
+			sql.append("'" + r.getComment() + "',");
+			sql.append((r.isSound() ? 1 : 0) + ",");
+			sql.append("'" + r.getPlace() + "',");
+			sql.append("'" + sdf.format(r.getDatetime()) + "',");
+			sql.append("'" + r.getPrio().name() + "');");
+			DatabaseUtil.updateStatement(sql.toString());
+		}
+		LOGGER.info("Reminder copied!");
 	}
 
 	@Override
@@ -68,11 +86,22 @@ public class ServiceDaoImpl2 implements IServiceDao {
 		StringBuilder sql = new StringBuilder();
 		sql.append("DELETE FROM reminder WHERE id IN (" + sj.toString() + ");");
 		DatabaseUtil.updateStatement(sql.toString());
+		LOGGER.info("Reminder deleted!");
 	}
 
 	@Override
 	public void update(Reminder currentReminder) {
-		// TODO Auto-generated method stub
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		StringBuilder sql = new StringBuilder();
+		sql.append("UPDATE reminder set topic = '" + currentReminder.getTopic() + "',");
+		sql.append("comment = '" + currentReminder.getComment() + "',");
+		sql.append("sound = " + (currentReminder.isSound() ? 1 : 0) + ",");
+		sql.append("place = '" + currentReminder.getPlace() + "',");
+		sql.append("date = '" + sdf.format(currentReminder.getDatetime()) + "',");
+		sql.append("priority = '" + currentReminder.getPrio().name() + "' ");
+		sql.append("WHERE id = " + currentReminder.getID());
+		DatabaseUtil.updateStatement(sql.toString());
+		LOGGER.info("Reminder was updated!");
 	}
 
 	@Override
