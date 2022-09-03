@@ -41,6 +41,7 @@ public class ReminderTest {
 		Date date = new Date();
 		Priority prio = Priority.LOW;
 		boolean isSound = false;
+
 		
 		// W H E N
 		testinstance.setUid(id);
@@ -59,15 +60,10 @@ public class ReminderTest {
 		assertEquals(testinstance.isSound(), isSound);
 		assertEquals(testinstance.getTopic(), topic);
 		assertEquals(testinstance.getID(), id);
-		
 	}
 	
 	@Test
 	public void testEquals() {
-		// G I V E N
-		
-		// W H E N
-		
 		// T H E N
 	}
 	
