@@ -3,13 +3,13 @@ package reminder.service;
 import java.util.List;
 
 import reminder.dao.IServiceDao;
-import reminder.dao.ServiceDaoImpl2;
+import reminder.dao.ServiceDaoImplDatabase;
 import reminder.model.Reminder;
 
 public class ServiceImpl implements IDataService {
 
 //	private IServiceDao dao = new ServiceDaoImpl();
-	private IServiceDao dao = new ServiceDaoImpl2();
+	private IServiceDao dao = new ServiceDaoImplDatabase();
 
 	@Override
 	public List<Reminder> loadAll() {
