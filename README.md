@@ -5,4 +5,3 @@
 
 # How to use
 - First of all. If u want use ur custom sound you have to convert it to .wav data.
-- This is not a final version
