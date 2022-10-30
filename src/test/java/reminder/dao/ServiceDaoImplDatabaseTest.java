@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ServiceDaoImpl2Test {
+public class ServiceDaoImplDatabaseTest {
 
 	@Test
 	public void test() {

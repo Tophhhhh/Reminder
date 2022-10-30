@@ -8,16 +8,16 @@ import reminder.app.Priority;
 
 public class Reminder {
 
-	public Long id;
+	private Long id;
 	@Mandatory(isMandatory = true)
-	public String topic;
+	private String topic;
 	@Mandatory(isMandatory = true)
-	public String comment;
-	public boolean sound;
-	public String place;
-	public Priority prio;
+	private String comment;
+	private boolean sound;
+	private String place;
+	private Priority prio;
 	@Mandatory(isMandatory = true)
-	public Date datetime;
+	private Date datetime;
 
 	public Reminder() {
 		// Empty Constructor

@@ -10,16 +10,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import reminder.app.Priority;
 import reminder.model.Reminder;
 
 public class DatabaseUtil {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseUtil.class);
+	
 	private static Connection con;
 	private static Statement stmnt;
 
@@ -34,7 +38,7 @@ public class DatabaseUtil {
 			con.setAutoCommit(true);
 			stmnt = con.createStatement();
 		} catch (IOException | SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		}
 	}
 
@@ -47,7 +51,7 @@ public class DatabaseUtil {
 				con.close();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		}
 	}
 
@@ -65,7 +69,7 @@ public class DatabaseUtil {
 				f.getType(); // return type
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		}
 	}
 
@@ -87,7 +91,7 @@ public class DatabaseUtil {
 			}
 			return result;
 		} catch (SQLException | ParseException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		}
 		return Collections.emptyList();
 	}
@@ -96,7 +100,7 @@ public class DatabaseUtil {
 		try {
 			stmnt.executeUpdate(sql);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		}
 	}
 }

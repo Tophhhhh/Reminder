@@ -188,7 +188,7 @@ public class ListView implements Ui {
 			TableItem tableItem = new TableItem(table, SWT.NONE);
 			tableItem.setText(0, r.getID().toString());
 			tableItem.setText(1, r.getTopic());
-			tableItem.setText(2, r.prio.toString());
+			tableItem.setText(2, r.getPrio().toString());
 			tableItem.setBackground(2,
 					r.getPrio() == Priority.HIGH ? red : r.getPrio() == Priority.MEDIUM ? yellow : green);
 			tableItem.setText(3, r.getComment());

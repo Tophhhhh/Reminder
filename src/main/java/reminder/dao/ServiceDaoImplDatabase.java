@@ -7,17 +7,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.StringJoiner;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import reminder.annotation.Mandatory;
 import reminder.model.Reminder;
 import reminder.util.DatabaseUtil;
 
-public class ServiceDaoImpl2 implements IServiceDao {
+public class ServiceDaoImplDatabase implements IServiceDao {
 
-	private static Logger LOGGER = Logger.getGlobal();
+	private static Logger LOGGER = LoggerFactory.getLogger(ServiceDaoImplDatabase.class);
 	
-	public ServiceDaoImpl2() {
+	public ServiceDaoImplDatabase() {
 		DatabaseUtil.connection();
 		LOGGER.info("Connected to database");
 	}
@@ -139,7 +141,7 @@ public class ServiceDaoImpl2 implements IServiceDao {
 					}
 				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 						| NoSuchMethodException | SecurityException e) {
-					e.printStackTrace();
+					LOGGER.error(e.getMessage(), e);
 				}
 				if (!isMandatory) {
 					return isMandatory;

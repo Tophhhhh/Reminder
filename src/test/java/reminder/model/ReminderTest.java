@@ -1,9 +1,8 @@
 package reminder.model;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
-import java.util.Date;
+import java.text.ParseException;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,69 +13,39 @@ import reminder.app.Priority;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ReminderTest {
-	
+
 	@InjectMocks
-	private Reminder testinstance;
+	private Reminder testinstace;
 	
 	@Test
-	public void testConstructor() {
-		// G I V E N
-		Reminder testOne = new Reminder("Topic", "Comment", false, "Place", Priority.MEDIUM, new Date());
-		Reminder testTwo = new Reminder(1l, "Topic", "Comment", false, "Place", Priority.MEDIUM, new Date());
-		
-		// W H E N
-		
-		// T H E N
-		assertNotNull(testOne);
-		assertNotNull(testTwo);
-	}
-	
-	@Test
-	public void testGetterAndSetter() {
+	public void testGetterAndSetter() throws ParseException {
 		// G I V E N
 		Long id = 1l;
-		String comment = "Comment";
-		String place = "Place";
 		String topic = "Topic";
-		Date date = new Date();
-		Priority prio = Priority.LOW;
+		String comment = "Comment";
 		boolean isSound = false;
+		String place = "Place";
+		Priority prio = Priority.HIGH;
+
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		Date date = sdf.parse(LocalDate.of(2022, 10, 1).toString());
 		
 		// W H E N
-		testinstance.setUid(id);
-		testinstance.setComment(comment);
-		testinstance.setDatetime(date);
-		testinstance.setPlace(place);
-		testinstance.setPrio(prio);
-		testinstance.setSound(isSound);
-		testinstance.setTopic(topic);
+		testinstace.setUid(id);
+		testinstace.setTopic(topic);
+		testinstace.setComment(comment);
+		testinstace.setSound(isSound);
+		testinstace.setPlace(place);
+		testinstace.setPrio(prio);
+//		testinstace.setDatetime(date);
 		
 		// T H E N
-		assertEquals(testinstance.getComment(), comment);
-		assertEquals(testinstance.getDatetime(), date);
-		assertEquals(testinstance.getPlace(), place);
-		assertEquals(testinstance.getPrio(), prio);
-		assertEquals(testinstance.isSound(), isSound);
-		assertEquals(testinstance.getTopic(), topic);
-		assertEquals(testinstance.getID(), id);
-		
-	}
-	
-	@Test
-	public void testEquals() {
-		// G I V E N
-		
-		// W H E N
-		
-		// T H E N
-	}
-	
-	@Test
-	public void testHashCode() {
-		// G I V E N
-		
-		// W H E N
-		
-		// T H E N
+		assertEquals(id, testinstace.getID());
+		assertEquals(topic, testinstace.getTopic());
+		assertEquals(comment, testinstace.getComment());
+		assertEquals(isSound, testinstace.isSound());
+		assertEquals(place, testinstace.getPlace());
+		assertEquals(prio, testinstace.getPrio());
+//		assertEquals(date, testinstace.getDatetime());
 	}
 }
