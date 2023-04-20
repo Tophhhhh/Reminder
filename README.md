@@ -1,11 +1,8 @@
 # Reminder
- Es fing als kleiner Reminder an...
- es war ein kleiner Schritt für die Reminder...
- Doch ein GROßER schritt für die Menschheit! °^°
+Der Reminder enstandt durch ein Übungsprojekt für die Schule und hat folgende Funktionen:
+- Termine können erstellt, gelöscht, geändert und gefiltert werden
+- Es besteht die möglichkeit über ein "Klingelton" erinnert zu werden
 
-## How to use
-- With music support!
-
-# Support 
-
-# About 
+# About
+Die Anwendung ist ein simples Java Projekt. 
+Als Datenbank wird SQLite benutzt.
